@@ -20,4 +20,7 @@ public class Message {
     @Column(name="メッセージ")
     private String message;
 
+    @Column(name="時刻")
+    private String timeStamp;
+
 }
