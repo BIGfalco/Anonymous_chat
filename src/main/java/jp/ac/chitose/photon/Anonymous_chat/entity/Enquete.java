@@ -19,4 +19,6 @@ public class Enquete {
     @Column(name = "投票数")
     private int Votes;
 
+    @Column(name = "制限時間")
+    private String deadLine;
 }
