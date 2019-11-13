@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .layerImage{
-    background-image: url("neko2.jpg");
+    background-image: url("main/resources/templates/neko1.jpg");
     background-position: top center;
     background-size: cover;
     width: 100%;
@@ -13,19 +13,23 @@
     width: 100%;
     height: 100%;
 }
-.message{
+.messagel{
     position: relative;
     text-align: center;
+    font-family: Courier;
+    font-size: 40px;
+    margin-top: 30px;
+
 }
 .position{
     position: relative;
     text-align: center;
-    margin: 10px;
+    margin: 50px;
 }
-.bottons{
+.bottonsr{
     display: inline-block;
-    padding: 0.3em 1em;
-    font-size: 1.3em;
+    padding: 10px 20px;
+    font-size: 20px;
     text-decoration: none;
     color: coral;
     background-color: white;
@@ -35,7 +39,7 @@
     margin: 0 0 20px;
 }
 
-.bottons:hover{
+.bottonsr:hover{
     background: coral;
     color: white;
 }
