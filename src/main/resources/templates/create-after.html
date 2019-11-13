@@ -10,13 +10,13 @@
     <div class="layerTransparent">
         <form action="login-after.php" method="post">
             <div class="texts">
-                <p>[[${roomname}]]</p>
+                <p>roomname:[[${roomname}]]</p>
             <br>
-                <p>[[${roomID}]]</p>
+                <p>roomID:[[${roomID}]]</p>
             <br>
-                <p>[[${password}]]</p>
+                <p>password:[[${password}]]</p>
             <br>
-            <input id="copyt" type="text" value="[[${roomnname}]],[[${roomID}]],[[${password}]]" readonly>
+                <input id="copyTarget" type="text" value="[[${roomname}]],[[${roomID}]],[[${password}]]" readonly>
                 <button onclick="copyToClipboard()">copy</button>
             </div>
         <button onclick="document.location='login.html';">入室画面へ</button>
@@ -25,15 +25,16 @@
 </div>
 
         <script>
-            function copyToClipboard() {
+            const url=new URL(location.href);
+            const id=url.searchParams.get("id");
 
-                var copyt=document.getElementById("copyt");
+            function copyToClipboard(){
+                    var copyTarget=document.getElementById("copyTarget");
+                    copyTarget.select();
 
-                copyt.select();
+                    document.execCommand("copy");
 
-                document.execCommand("copy");
-
-            }
+            };
         </script>
 </body>
 </html>
