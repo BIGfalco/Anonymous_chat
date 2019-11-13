@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>チャットルーム</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <!-- タイトル -->
+        <div class = "title">
+            [[${title}]]
+        </div>
+    </header>
+
+    <!-- チャット画面 -->
+    <div class = "chat_container">
+
+        <!-- 会話エリア -->
+        <div class = "contents scroll">
+            <!-- 相手コメント -->
+            <div class = "left-text">[[${leftText}]]</div>
+
+            <!-- 自分コメント -->
+            <div class = "right-text">
+                <div class = "text">[[${rightText}]]</div>
+                <span class = "data">[[${time}]]</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <!-- タグ一覧 -->
+        <div class = "tag" id = "tag-popup">
+            <i class = "fas fa-hashtag"></i>
+            <div class = "popup-inner">
+                <div class = "close btn" id = "tag-close-btn"><i class = "fas fa-times"></i></div>
+
+            </div>
+        </div>
+
+        <!-- アンケートへ -->
+        <div class = "enquete"></div>
+
+        <!-- メッセージ投稿 -->
+        <div class = "messagePost"></div>
+    </footer>
+
+
+</body>
+</html>
