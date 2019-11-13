@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="enquate.css">
@@ -12,6 +12,9 @@
     <div class="triangle">
         <div class="triangle3"></div>
     </div>
+    <ul th:each="${}">
+        <li><pre style="background: white">[[${text}]]</pre>---[[${}]]</li>
+    </ul>
     <footer>
         <div class="btn"><<button class="cp_btn">再投票</button></div>
     </footer>
