@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylel.css">
+    <title>Anonymous chat_login</title>
+</head>
+<body>
+<div class="layerImage">
+    <div class="layerTransparent">
+        <div class="messagel">
+            入室する<br>
+        </div>
+        <div class="position">
+            <form name="Login" method="post" action="login-after.php">
+                <div>
+                    <label for="id">room ID</label><br>
+                    <input type="text" id="id" name="id">
+                </div>
+                <div>
+                    <label for="pass">room password</label><br>
+                    <input type="password" id="pass" name="pass">
+                </div>
+                <button type="submit" class="bottonsr" onclick="document.location=login-after.html">入室</button>
+                <button type="botton" class="bottonsr" onclick="history.back()">戻る</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
