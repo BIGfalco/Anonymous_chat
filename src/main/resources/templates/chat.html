@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+
     <title>チャットルーム</title>
-    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="slide.css">
+    <link rel="stylesheet" type="text/css" href="chat.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -20,12 +25,16 @@
         <!-- 会話エリア -->
         <div class = "contents scroll">
             <!-- 相手コメント -->
-            <div class = "left-text">[[${leftText}]]</div>
+            <div class = "left-text">
+                <div class = "youText">[[${leftText}]]</div>
+                <div class = "youTime">[[${leftTime}]]</div>
+            </div>
+
 
             <!-- 自分コメント -->
             <div class = "right-text">
-                <div class = "text">[[${rightText}]]</div>
-                <span class = "data">[[${time}]]</span>
+                <div class = "myText">[[${rightText}]]</div>
+                <span class = "myTime">[[${rightTime}]]</span>
             </div>
 
         </div>
@@ -34,11 +43,32 @@
 
     <footer>
         <!-- タグ一覧 -->
-        <div class = "tag" id = "tag-popup">
+        <!--<div class = "tag" id = "tag-popup">
             <i class = "fas fa-hashtag"></i>
             <div class = "popup-inner">
                 <div class = "close btn" id = "tag-close-btn"><i class = "fas fa-times"></i></div>
 
+            </div>
+        </div>
+        -->
+        <!--
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modal-sample">
+            タグ
+        </button>
+        -->
+
+        <div id = "tag">
+            <div id = "tag-slide-in">
+                <div id = "open-btn"><i class='fas fa-hashtag'></i></div>
+                 <h3>タグ一覧</h3>
+                <div id = "tag-slide-contents">
+                    <table>
+                        <tr><th></th></tr>
+                        <tr th:each="tags : ${tagList}">
+                            <td th:text="${tags.tag}"></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
 
@@ -49,6 +79,6 @@
         <div class = "messagePost"></div>
     </footer>
 
-
+    <script src="sample1.js"></script>
 </body>
 </html>
