@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .layerImage{
-    background-image: url("main/resources/templates/neko1.jpg");
+    background-image: url("neko1.jpg");
     background-position: top center;
     background-size: cover;
     width: 100%;
@@ -26,7 +26,7 @@
     text-align: center;
     margin: 50px;
 }
-.bottonsr{
+.buttonsr{
     display: inline-block;
     padding: 10px 20px;
     font-size: 20px;
@@ -39,7 +39,35 @@
     margin: 0 0 20px;
 }
 
-.bottonsr:hover{
+.buttonsr:hover{
     background: coral;
     color: white;
+}
+
+#id{
+    border: 0;
+    padding: 10px;
+    font-size: 1.3em;
+    font-family: Arial,sans-serif;
+    color: #aaa;
+    border:solid 1px #ccc;
+    margin: 0 0 20px;
+    width:300px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#pass{
+    border: 0;
+    padding: 10px;
+    font-size: 1.3em;
+    font-family: Arial,sans-serif;
+    color: #aaa;
+    border:solid 1px #ccc;
+    margin: 0 0 20px;
+    width:300px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
