@@ -10,13 +10,27 @@
         <div class="enquate_title">投票   <span>[[${tag}]]</span></div>
     </header>
     <div class="triangle">
-        <div class="triangle3"></div>
+        <div class=""btn></div>
+        <div class="triangle3" onclick= MouseClick()></div>
     </div>
     <ul th:each="${}">
         <li><pre style="background: white">[[${text}]]</pre>---[[${}]]</li>
     </ul>
     <footer>
-        <div class="btn"><<button class="cp_btn">再投票</button></div>
+        <div id="btn"><button id="cp_btn">投票</button></div>
     </footer>
+
+    <script type="text/javascript">
+        function MouseClick()
+        {
+            alert("三角のボタン がクリックされました");
+        }
+
+        document.getElementById("btn").onclick = function() {
+            document.getElementById("cp_btn").innerHTML = "再投票";
+        };
+
+    </script>
+
 </body>
 </html>
