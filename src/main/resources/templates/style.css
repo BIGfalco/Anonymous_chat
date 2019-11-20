@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 .layerImage{
-    background-image: url("main/resources/templates/neko3.jpg");
+    background-image: url("neko3.jpg");
     background-position: top center;
     background-size: cover;
     width: 100%;
@@ -21,7 +21,7 @@
 
 }
 
-.botton1 {
+.button1 {
     display: inline-block;
     padding: 5em 15em;
     text-decoration: none;
@@ -35,7 +35,7 @@
 }
 
 
-.botton1:hover{
+.button1:hover{
     background: #e38b75;
     color: white;
 }
@@ -47,7 +47,7 @@
 
 }
 
-.botton2{
+.button2{
     display: inline-block;
     padding: 5em 15em;
     text-decoration: none;
@@ -60,7 +60,7 @@
     text-align: center;
 
 }
-.botton2:hover{
+.button2:hover{
     background: #fcc875;
     color: white;
 }
