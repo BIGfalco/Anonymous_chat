@@ -13,29 +13,79 @@
     width: 100%;
     height: 100%;
 }
+
+.position {
+    position: relative;
+    text-align: center;
+}
+
 .message{
-    position: relative;
-    text-align: center;
+    font-family: Arial,sans-serif;
+    font-size: 40px;
+    margin: 0 0 30px;
 }
-.position{
-    position: relative;
-    text-align: center;
-    margin: 10px;
-}
-.bottons{
+.button1{
     display: inline-block;
-    padding: 0.3em 1em;
-    font-size: 1.3em;
+    padding: 10px 20px;
+    font-size: 20px;
     text-decoration: none;
     color: coral;
     background-color: white;
     border: solid 2px coral;
     border-radius: 3px;
     transition: .4s;
-    margin: 0 0 20px;
+    margin: 20px 0 20px;
 }
 
-.bottons:hover{
+.button1:hover{
     background: coral;
     color: white;
+}
+
+.button2{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: coral;
+    background-color: white;
+    border: solid 2px coral;
+    border-radius: 3px;
+    transition: .4s;
+    margin: 20px 0 20px;
+}
+
+.button2:hover{
+    background: coral;
+    color: white;
+}
+
+#name{
+    border: 0;
+    padding: 10px;
+    font-size: 1.3em;
+    font-family: Arial,sans-serif;
+    color: #aaa;
+    border:solid 2px #ccc;
+    margin: 10px 0 0;
+    width:300px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    position: center;
+}
+
+#pass{
+    border: 0;
+    padding: 10px;
+    font-size: 1.3em;
+    font-family: Arial,sans-serif;
+    color: #aaa;
+    border:solid 2px #ccc;
+    margin: 10px 0 0;
+    width:300px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    position: center;
 }

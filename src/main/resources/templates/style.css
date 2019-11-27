@@ -32,6 +32,7 @@
     background: 00000000;
     margin: 10% 0;
     font-size: large;
+    font-family: Arial, sans-serif;
 }
 
 
@@ -57,6 +58,7 @@
     background: 00000000;
     transition: .4s;
     font-size: large;
+    font-family: Arial,sans-serif;
     text-align: center;
 
 }
