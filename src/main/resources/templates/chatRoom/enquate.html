@@ -62,8 +62,8 @@
         </nav>
     </div>
 
-    <ul th:each="${}">
-        <li><pre style="background: white">[[${text}]]</pre>---[[${}]]</li>
+    <ul th:each="Tag : ${Tags}">
+        <li><pre style="background: white">[[${Tag}]]</pre></li>
     </ul>
     <footer>
         <div id="btn"><button id="cp_btn">投票</button></div>

@@ -43,6 +43,10 @@ body {
     background: lightsteelblue;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .triangle {
     width: 100px;
     margin-left: auto;
