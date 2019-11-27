@@ -8,16 +8,20 @@
 <body>
 <div class="layerImage">
     <div class="layerTransparent">
-        <form action="login-after.php" method="post">
-            <class="texts">
+        <div class="message">
+
+        </div>
+        <div class="position">
+            <div class="texts">
                 <p>roomname:[[${roomname}]]</p>
             <br>
                 <p>roomID:[[${roomID}]]</p>
             <br>
                 <p>password:[[${password}]]</p>
             <br>
-        <button onclick="document.location='login.html';">入室画面へ</button>
-        </form>
+        <button type="button" class="button" onclick="document.location='login.html';">入室画面へ</button>
+            </div>
+        </div>
     </div>
 </div>
 </body>
