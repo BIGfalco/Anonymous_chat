@@ -12,6 +12,9 @@ public interface RoomService {
 
     void deleteRoom(Room room);
 
+    boolean existsRoomId(int roomId);
+
+
 
 
 }
