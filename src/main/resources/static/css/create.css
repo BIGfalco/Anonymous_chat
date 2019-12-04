@@ -22,6 +22,7 @@
 .message{
     font-family: Arial,sans-serif;
     font-size: 20px;
+    color:#896e69;
 }
 .button1{
     display: inline-block;
@@ -29,7 +30,7 @@
     font-size: 20px;
     text-decoration: none;
     color: coral;
-    background-color: white;
+    background-color: #f9f9ff;
     border: solid 2px coral;
     border-radius: 3px;
     transition: .4s;
@@ -48,7 +49,7 @@
     font-size: 20px;
     text-decoration: none;
     color: coral;
-    background-color: white;
+    background-color: #f9f9ff;
     border: solid 2px coral;
     border-radius: 3px;
     transition: .4s;
@@ -58,7 +59,7 @@
 
 .button2:hover{
     background: coral;
-    color: white;
+    color: #f9f9ff;
 }
 
 #name{
