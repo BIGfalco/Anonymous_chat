@@ -20,4 +20,9 @@ public class Room {
     @Column(name="パスワード")
     private String password;
 
+    public Room(int roomID, String roomName, String password) {
+        this.roomID = roomID;
+        this.roomName = roomName;
+        this.password = password;
+    }
 }
