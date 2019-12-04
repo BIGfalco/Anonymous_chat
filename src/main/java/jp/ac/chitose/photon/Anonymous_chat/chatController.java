@@ -1,5 +1,6 @@
 package jp.ac.chitose.photon.Anonymous_chat;
 
+import jp.ac.chitose.photon.Anonymous_chat.entity.Room;
 import jp.ac.chitose.photon.Anonymous_chat.service.EnqueteService;
 import jp.ac.chitose.photon.Anonymous_chat.service.MessageService;
 import jp.ac.chitose.photon.Anonymous_chat.service.RoomService;
@@ -31,8 +32,7 @@ public class chatController {
 
     @PostMapping("Created")
     public String created(Model model,String name,String pass) {
-        model.addAttribute("roomName",name);
-        model.addAttribute("password",pass);
+
 
         int roomId = 0;
         while(true) {
@@ -44,8 +44,22 @@ public class chatController {
                 break;
             }
         }
+        Room room = new Room(roomId,name,pass);
+        roomService.saveRoom(room);
+        model.addAttribute("roomName",name);
+        model.addAttribute("password",pass);
         model.addAttribute("roomId",roomId);
         return "create/create-after";
+    }
+
+    @GetMapping("Login")
+    public String login(Model model){
+        return "login/login";
+    }
+
+    @PostMapping("Logined")
+    public String logined(Model model,String id,String pass){
+        return "login/logined";
     }
 
 
