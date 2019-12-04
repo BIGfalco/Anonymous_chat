@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .layerImage{
-    background-image: url("neko1.jpg");
+    background-image: url("neko6.jpeg");
     background-position: top center;
     background-size: cover;
     width: 100%;
@@ -13,15 +13,8 @@
     width: 100%;
     height: 100%;
 }
-.position{
-    position: relative;
-    text-align: center;
-}
 
-.front1{
-    position: relative;
-    top:30px;
-}
+
 .button1{
     display: inline-block;
     padding: 10px 20px;
@@ -32,7 +25,8 @@
     border: solid 2px coral;
     border-radius: 3px;
     transition: .4s;
-    margin: 20px 0 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .button1:hover{
@@ -40,10 +34,6 @@
     color: white;
 }
 
-.front2{
-    position: relative;
-    top:30px;
-}
 .button2{
     display: inline-block;
     padding: 10px 20px;
@@ -54,7 +44,8 @@
     border: solid 2px coral;
     border-radius: 3px;
     transition: .4s;
-    margin: 20px 0 20px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .button2:hover{
@@ -62,32 +53,19 @@
     color: white;
 }
 
-#id{
-    border: 0;
-    padding: 10px;
-    font-size: 1.3em;
-    font-family: Arial,sans-serif;
-    color: #aaa;
-    border:solid 2px #ccc;
-    margin: 10px 0 20px;
-    width:300px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    position: center;
+.position{
+    text-align: center;
+    vertical-align: center;
 }
 
-#pass{
-    border: 0;
-    padding: 10px;
-    font-size: 1.3em;
-    font-family: Arial,sans-serif;
-    color: #aaa;
-    border:solid 2px #ccc;
-    margin: 10px 0 20px;
-    width:300px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    position: center;
+.a{
+    text-align: center;
+}
+.b{
+    text-align: center;
+    margin: 1% 0;
+}
+.c{
+    text-align: center;
+    margin: 1% 0;
 }

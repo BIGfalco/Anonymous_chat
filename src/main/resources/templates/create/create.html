@@ -2,27 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="stylec.css">
+    <link rel="stylesheet" type="text/css" href="create.css">
     <title>Anonymous chat_create</title>
 </head>
 <div class="layerImage">
     <body>
     <div class="layerTransparent">
         <div class="position">
+            <div class="a">
             <div class="message">
-                create room!<br>
+                chat roomをつくろう<br>
             </div>
-        <form action="create.php" method="post">
-            <div>
+            </div>
+        <form action="java" method="post">
+            <div class="b">
                 <label for="name">room name</label><br>
                 <input type="text" id="name" name="name">
-            </div>
-            <div>
                 <label for="pass">room password</label><br>
                 <input type="text" id="pass" name="pass">
             </div>
+            <div class="c">
             <input type="submit" value="作成" class="button1" onclick="document.location='create-after.html';">
             <button type="button" class="button2" onclick="history.back()">戻る</button>
+            </div>
         </form>
         </div>
     </div>

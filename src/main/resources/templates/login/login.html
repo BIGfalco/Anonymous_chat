@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="stylel.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
     <title>Anonymous chat_login</title>
 </head>
 <body>
 <div class="layerImage">
     <div class="layerTransparent">
         <div class="position">
-            <form name="Login" method="post" action="login.php">
+            <form name="Login" method="post" action="java">
+                <div class="a">
                 <div class="front1">
                     <label for="id">room ID</label><br>
                     <input type="text" id="id" name="id">
@@ -18,8 +19,12 @@
                     <label for="pass">room password</label><br>
                     <input type="password" id="pass" name="pass">
                 </div>
+                </div>
+                <div class="b">
                 <button type="submit" class="button1" onclick="document.location='login-after.html';">入室</button>
                 <button type="button" class="button2" onclick="document.location='index.html';">戻る</button>
+                </div>
+
             </form>
         </div>
     </div>
