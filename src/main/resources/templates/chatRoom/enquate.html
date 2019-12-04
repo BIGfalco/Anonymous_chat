@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="enquate.css">
-    <link rel="stylesheet" href="zdo_drawer_menu.css">
-    <script type="text/javascript" src="zdo_drawer_menu.js"></script>
+    <link rel="stylesheet" href="../../static/css/enquate.css">
+    <link rel="stylesheet" href="../../static/css/zdo_drawer_menu.css">
+    <script type="text/javascript" src="../../static/js/zdo_drawer_menu.js"></script>
     <title>Enquate</title>
 </head>
 <body>
     <header>
         <div class="enquate_title">投票   <span>[[${tag}]]</span></div>
     </header>
+    <!--
     <div class="triangle">
         <div class=""btn></div>
         <div class="triangle3" onclick= MouseClick()></div>
     </div>
+    -->
 
     <div class="zdo_drawer_menu">
         <div class="zdo_drawer_bg"></div>
@@ -63,7 +65,7 @@
     </div>
 
     <ul th:each="Tag : ${Tags}">
-        <li><pre style="background: white">[[${Tag}]]</pre></li>
+        <li><pre style="background: white"><label><input type="checkbox" name="skill" value="word">[[${Tag}]]</label></pre></li>
     </ul>
     <footer>
         <div id="btn"><button id="cp_btn">投票</button></div>
