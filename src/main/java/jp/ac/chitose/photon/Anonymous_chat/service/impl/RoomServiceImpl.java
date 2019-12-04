@@ -32,4 +32,15 @@ public class RoomServiceImpl implements RoomService {
         return roomRepository.findById(roomId);
     }
 
+    @Override
+    public boolean existsRoomId(int roomId){
+        int flag = roomRepository.searchRoomId(roomId);
+        if(flag > 1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
 }
