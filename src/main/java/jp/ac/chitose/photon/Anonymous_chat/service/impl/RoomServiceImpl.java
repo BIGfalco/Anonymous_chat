@@ -6,7 +6,6 @@ import jp.ac.chitose.photon.Anonymous_chat.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @Service
 public class RoomServiceImpl implements RoomService {
@@ -28,8 +27,8 @@ public class RoomServiceImpl implements RoomService {
     }
 
     @Override
-    public Optional<Room> findById(int roomId) {
-        return roomRepository.findById(roomId);
+    public Room getOne(int roomId) {
+        return roomRepository.getOne(roomId);
     }
 
     @Override
