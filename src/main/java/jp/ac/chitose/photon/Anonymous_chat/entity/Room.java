@@ -26,6 +26,12 @@ public class Room {
         this.password = password;
     }
 
+    public Room(){
+        this.roomID = 0;
+        this.roomName = "";
+        this.password = "";
+    }
+
     public int getRoomID() {
         return roomID;
     }

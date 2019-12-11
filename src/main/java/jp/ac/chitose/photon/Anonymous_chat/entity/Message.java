@@ -9,13 +9,9 @@ import javax.persistence.*;
 @Table(name="MESSAGE")
 public class Message {
 
-    @Id
+    @EmbeddedId
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ユーザID")
-    private String userID;
-
-    @Column(name="ルームID")
-    private Integer roomID;
+    private MessagePrimarykey primarykey;
 
     @Column(name="メッセージ")
     private String message;
@@ -23,21 +19,6 @@ public class Message {
     @Column(name="時刻")
     private String timeStamp;
 
-    public String getUserID() {
-        return userID;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
-
-    public Integer getRoomID() {
-        return roomID;
-    }
-
-    public void setRoomID(Integer roomID) {
-        this.roomID = roomID;
-    }
 
     public String getMessage() {
         return message;

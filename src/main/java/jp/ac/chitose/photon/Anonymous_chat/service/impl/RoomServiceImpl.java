@@ -34,11 +34,11 @@ public class RoomServiceImpl implements RoomService {
     @Override
     public boolean existsRoomId(int roomId){
         int flag = roomRepository.searchRoomId(roomId);
-        if(flag > 1){
-            return false;
-        }
-        else{
+        if(flag > 0){
             return true;
+        }
+        else {
+            return false;
         }
     }
 

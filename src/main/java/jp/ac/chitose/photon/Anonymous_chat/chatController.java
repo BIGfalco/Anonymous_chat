@@ -39,7 +39,7 @@ public class chatController {
         int roomId = 0;
         while(true) {
             roomId++;
-            if(roomService.existsRoomId(roomId)) {
+            if(!roomService.existsRoomId(roomId)) {
                 break;
             }
 

@@ -27,9 +27,10 @@ public class MessageServiceImpl implements MessageService {
         messageRepository.delete(message);
     }
 
+    /*
     @Override
     public Optional<Message> findById(String userId) {
         return messageRepository.findById(userId);
-    }
+    }*/
     
 }
