@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface MessageService {
 
-    Optional<Message> findById(String userId);
+    //Optional<Message> findById(String userId);
 
     void saveMessage(Message message);
 
