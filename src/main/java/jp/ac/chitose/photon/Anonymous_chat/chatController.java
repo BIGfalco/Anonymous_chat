@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class chatController {
+public class
+chatController {
 
     @Autowired
     private RoomService roomService;
