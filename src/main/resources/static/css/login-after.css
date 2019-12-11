@@ -20,18 +20,18 @@
     padding: 10px 20px;
     font-size: 20px;
     text-decoration: none;
-    color: coral;
-    background-color: white;
-    border: solid 2px coral;
+    color: #688b8a;
+    border: solid 2px #688b8a;
     border-radius: 3px;
     transition: .4s;
+    background-color: 00000000;
     margin-left: auto;
     margin-right: auto;
 }
 
 .button1:hover{
-    background: coral;
-    color: white;
+    background: #688b8a;
+    color: #faefd4;
 }
 
 .button2{
@@ -39,18 +39,18 @@
     padding: 10px 20px;
     font-size: 20px;
     text-decoration: none;
-    color: coral;
-    background-color: white;
-    border: solid 2px coral;
+    color: #a0b084;
+    border: solid 2px #a0b084;
     border-radius: 3px;
     transition: .4s;
+    background-color: 00000000;
     margin-right: auto;
     margin-left: auto;
 }
 
 .button2:hover{
-    background: coral;
-    color: white;
+    background: #a0b084;
+    color: #faefd4;
 }
 
 .position{
@@ -68,4 +68,9 @@
 .c{
     text-align: center;
     margin: 1% 0;
+}
+.message{
+    font-family: Arial,sans-serif;
+    font-size: 20px;
+    color: #a57c65;
 }

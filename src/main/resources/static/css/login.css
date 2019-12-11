@@ -29,9 +29,9 @@
     padding: 10px 20px;
     font-size: 20px;
     text-decoration: none;
-    color: coral;
-    background-color: white;
-    border: solid 2px coral;
+    color: #8bcbc8;
+    background-color:#f9f9ff;
+    border: solid 2px #8bcbc8;
     border-radius: 3px;
     transition: .4s;
     text-align: center;
@@ -39,8 +39,8 @@
 }
 
 .button1:hover{
-    background: coral;
-    color: white;
+    background: #8bcbc8;
+    color: #f9f9ff;
 }
 
 .front2{
@@ -52,9 +52,9 @@
     padding: 10px 20px;
     font-size: 20px;
     text-decoration: none;
-    color: coral;
-    background-color: white;
-    border: solid 2px coral;
+    color: #dae9e4;
+    background-color: #f9f9ff;
+    border: solid 2px #dae9e4;
     border-radius: 3px;
     transition: .4s;
     text-align: center;
@@ -62,8 +62,8 @@
 }
 
 .button2:hover{
-    background: coral;
-    color: white;
+    background: #dae9e4;
+    color: #f9f9ff;
 }
 .position{
     text-align: center;
@@ -74,7 +74,16 @@
 }
 .b{
     text-align: center;
-    margin: 5% 0;
+    margin: 1% 0;
+}
+.c{
+    text-align: center;
+    margin: 1% 0;
+}
+.message{
+    font-family: Arial,sans-serif;
+    font-size: 20px;
+    color:#3c2e3d;
 }
 #id{
     display: block;
@@ -83,7 +92,7 @@
     font-size: 1.3em;
     font-family: Arial,sans-serif;
     color: #aaa;
-    border:solid 2px #ccc;
+    border:solid 2px #ecc7c0;
     width:300px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -100,7 +109,7 @@
     font-size: 1.3em;
     font-family: Arial,sans-serif;
     color: #aaa;
-    border:solid 2px #ccc;
+    border:solid 2px #ecc7c0;
     width:300px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;

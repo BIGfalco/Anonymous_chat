@@ -18,7 +18,7 @@
 .message {
     font-family: Arial, sans-serif;
     font-size: 20px;
-    color: #896e69;
+    color: #4c384a;
 }
 
 .position{
@@ -31,16 +31,16 @@
     padding: 10px 20px;
     font-size: 20px;
     text-decoration: none;
-    color: #d55448;
+    color: #e25f70;
     background-color: #f9f9ff;
-    border: solid 2px #d55448;
+    border: solid 2px #e25f70;
     border-radius: 3px;
     transition: .4s;
     margin: 20px 0 20px;
 }
 
 .button:hover {
-    background: #d55448;
+    background: #e25f70;
     color: #f9f9ff;
 }
 .a{
@@ -49,7 +49,6 @@
 .b{
     text-align: center;
     margin: 1% 0;
-    color: #896e69;
 }
 .c {
     text-align: center;
@@ -57,15 +56,15 @@
 .b1{
     display: block;
     font-family: Arial,sans-serif;
-    color:#896e69;
+    color:#866768;
 }
 .b2{
     display: block;
     font-family: Arial,sans-serif;
-    color: #896e69;
+    color: #866768;
 }
 .b3{
     display: block;
     font-family: Arial,sans-serif;
-    color: #896e69;
+    color: #866768;
 }
