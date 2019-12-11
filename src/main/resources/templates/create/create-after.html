@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../../static/css/create-after.css">
+    <link rel="stylesheet" type="text/css" href="/css/create-after.css" th:href="@{/css/create-after.css}">
     <title>create.complete</title>
 </head>
 <body>
@@ -10,24 +10,28 @@
     <div class="layerTransparent">
         <div class="position">
             <div class="a">
-        <div class="message">
-            chatroomを作成しました
-        </div>
+                <div class="message">
+                    chatroomを作成しました
+                </div>
             </div>
+
             <div class="b">
                 <div class="b1">
-                    roomname:[[${roomname}]]
+                    roomname:[[${roomName}]]
                 </div>
                 <div class="b2">
-                    roomID:[[${roomID}]]
+                    roomID:[[${roomId}]]
                 </div>
                 <div class="b3">
                     password:[[${password}]]
                 </div>
             </div>
-                <div class="c">
-        <button type="button" class="button" onclick="document.location='login.html';">入室画面へ</button>
-        </div>
+
+            <div class="c">
+                <form action="Login" method="get">
+                    <button type="button" class="button">入室画面へ</button>
+                </form>
+            </div>
     </div>
 </div>
 </div>

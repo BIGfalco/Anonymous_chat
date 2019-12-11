@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface RoomService {
 
-    Optional<Room> findById(int roomID);
+    Room getOne(int roomID);
 
     void saveRoom(Room room);
 

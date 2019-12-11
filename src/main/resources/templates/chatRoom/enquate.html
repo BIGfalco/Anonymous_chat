@@ -65,10 +65,10 @@
     </div>
 
     <ul th:each="Tag : ${Tags}">
-        <li><pre style="background: white"><label><input type="checkbox" name="skill" value="word">[[${Tag}]]</label></pre></li>
+        <li><pre style="background: white"><label><form name="form1"><input type="checkbox" name="select">[[${Tag}]]</form></label></pre></li>
     </ul>
     <footer>
-        <div id="btn"><button id="cp_btn">投票</button></div>
+        <div id="btn"><button id="cp_btn" onclick="myCheck();">投票</button></div>
     </footer>
 
     <script type="text/javascript">
@@ -80,6 +80,21 @@
         document.getElementById("btn").onclick = function() {
             document.getElementById("cp_btn").innerHTML = "再投票";
         };
+
+        function myCheck() {
+            var flag = false; // 選択されているか否かを判定する変数
+
+                // i番目のチェックボックスがチェックされているかを判定
+                if (document.form1.select.checked) {
+                    flag = true;
+                    alert(document.form1.select.value + "が選択されました。");
+                }
+
+            // 何も選択されていない場合の処理
+            if (!flag) {
+                alert("項目が選択されていません。");
+            }
+        }
 
     </script>
 

@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Optional;
+
 @Controller
 public class chatController {
 
@@ -36,13 +38,11 @@ public class chatController {
 
         int roomId = 0;
         while(true) {
-            var idExists = roomService.existsRoomId(0);
-            if(idExists){
-                roomId++;
-            }
-            else{
+            roomId++;
+            if(roomService.existsRoomId(roomId)) {
                 break;
             }
+
         }
         Room room = new Room(roomId,name,pass);
         roomService.saveRoom(room);
@@ -58,8 +58,14 @@ public class chatController {
     }
 
     @PostMapping("Logined")
-    public String logined(Model model,String id,String pass){
-        return "login/logined";
+    public String logined(Model model,int id,String pass){
+        var room = roomService.getOne(id);
+        if(room.getPassword().equals(pass)){
+            model.addAttribute("roomName",room.getRoomName());
+            model.addAttribute("roomId",room.getRoomID());
+            return "login/login-after";
+        }
+        return "login/login";
     }
 
 

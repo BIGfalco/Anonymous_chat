@@ -1,83 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-
     <title>チャットルーム</title>
-    <meta charset="utf-8">
-
-    <link rel="stylesheet" type="text/css" href="../slide.css">
     <link rel="stylesheet" type="text/css" href="../../static/css/chat.css">
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
 </head>
 <body>
+    <div class="base_view">
+        <div class="room_name">
+            [[${roomName}]]
+        </div>
+        <div id="area" class="contents scroll">
+            <div class="myText">
+                <div class="text">[[$myText}]]</div>
+                <div class="date">[[$myDate}]]</div>
+            </div>
 
-<!-- タイトル -->
-
-    <div class = "title">
-        [[${title}]]
+            <div class="youText">
+                <div class="text">[[$youText}]]</div>
+                <div class="date">[[$youDate}]]</div>
+            </div>
+        </div>
     </div>
 
-    <!-- チャット画面 -->
-    <div class = "chat_container">
-
-        <!-- 会話エリア -->
-        <div class = "contents scroll">
-            <!-- 相手コメント -->
-            <div class = "left-text">
-                <div class = "youText">[[${leftText}]]</div>
-                <div class = "youTime">[[${leftTime}]]</div>
-            </div>
-
-
-            <!-- 自分コメント -->
-            <div class = "right-text">
-                <div class = "myText">[[${rightText}]]</div>
-                <span class = "myTime">[[${rightTime}]]</span>
-            </div>
-
-        </div>
-
+    <div class="form-group">
+        <table>
+            <tr>
+                <td>
+                    <input id="inp" type="text" name="name" class="newMessage form-control" autocomplete="nope">
+                </td>
+                <td width="80px">
+                    <button type="submit" class="btn" onclick="pushMessage()">送信</button>
+                </td>
+            </tr>
+        </table>
     </div>
 
-    <footer>
-        <!-- タグ一覧 -->
-        <!--<div class = "tag" id = "tag-popup">
-            <i class = "fas fa-hashtag"></i>
-            <div class = "popup-inner">
-                <div class = "close btn" id = "tag-close-btn"><i class = "fas fa-times"></i></div>
-
-            </div>
-        </div>
-        -->
-        <!--
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modal-sample">
-            タグ
-        </button>
-        -->
-
-        <div id = "tag">
-            <div id = "tag-slide-in">
-                <div id = "open-btn"><i class='fas fa-hashtag'></i></div>
-                 <h3>タグ一覧</h3>
-                <div id = "tag-slide-contents">
-                    <table>
-                        <tr><th></th></tr>
-                        <tr th:each="tags : ${tagList}">
-                            <td th:text="${tags.tag}"></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- アンケートへ -->
-        <div class = "enquete"></div>
-
-        <!-- メッセージ投稿 -->
-        <div class = "messagePost"></div>
-    </footer>
-
-    <script src="sample1.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RoomRepository extends JpaRepository<Room, Integer> {
 
-    @Query(value = "SELECT COUNT * FROM ROOM WHERE ルームID = :sid", nativeQuery = true )
+    @Query(value = "SELECT COUNT (ルームID) FROM ROOM WHERE ルームID = :sid", nativeQuery = true )
     public int searchRoomId(@Param("sid") int roomId);
 
 
