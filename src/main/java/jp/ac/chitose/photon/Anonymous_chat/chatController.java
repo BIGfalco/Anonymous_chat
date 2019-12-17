@@ -1,8 +1,5 @@
 package jp.ac.chitose.photon.Anonymous_chat;
 
-import jp.ac.chitose.photon.Anonymous_chat.entity.Room;
-import jp.ac.chitose.photon.Anonymous_chat.service.EnqueteService;
-import jp.ac.chitose.photon.Anonymous_chat.service.MessageService;
 import jp.ac.chitose.photon.Anonymous_chat.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,15 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.Optional;
-
 @Controller
 public class chatController {
 
-    @Autowired
-    private EnqueteService enqueteService;
-    @Autowired
-    private MessageService messageService;
     @Autowired
     private RoomService roomService;
 
@@ -44,8 +35,7 @@ public class chatController {
             }
 
         }
-        Room room = new Room(roomId,name,pass);
-        roomService.saveRoom(room);
+        roomService.save(roomId,name,pass);
         model.addAttribute("roomName",name);
         model.addAttribute("password",pass);
         model.addAttribute("roomId",roomId);
@@ -59,10 +49,10 @@ public class chatController {
 
     @PostMapping("Logined")
     public String logined(Model model,int id,String pass){
-        var room = roomService.getOne(id);
+        var room = roomService.getRoom(id);
         if(room.getPassword().equals(pass)){
             model.addAttribute("roomName",room.getRoomName());
-            model.addAttribute("roomId",room.getRoomID());
+            model.addAttribute("roomId",room.getRoomId());
             return "login/login-after";
         }
         return "login/login";

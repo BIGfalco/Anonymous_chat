@@ -1,16 +1,32 @@
 package jp.ac.chitose.photon.Anonymous_chat.repository;
 
-import jp.ac.chitose.photon.Anonymous_chat.entity.Room;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import jp.ac.chitose.photon.Anonymous_chat.form.Room;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import static org.springframework.jdbc.core.BeanPropertyRowMapper.newInstance;
+
 @Repository
-public interface RoomRepository extends JpaRepository<Room, Integer> {
+public class RoomRepository {
 
-    @Query(value = "SELECT COUNT (ルームID) FROM ROOM WHERE ルームID = :sid", nativeQuery = true )
-    public int searchRoomId(@Param("sid") int roomId);
+    @Autowired
+    private JdbcTemplate jdbc;
 
+    public int insert(Room room) {
+        var sql = "insert into ROOM values(?,?,?)";
+        var n = jdbc.update(sql,room.getRoomId(),room.getPassword(),room.getPassword());
+        return n;
+    }
 
+    public int searchRoomId(int roomId) {
+        var sql ="select count (ROOM_ID) from ROOM where ROOM_ID = ?";
+        var n = jdbc.queryForObject(sql,Integer.class,roomId);
+        return n;
+    }
+
+    public Room select(int roomId) {
+        var sql = "select ROOM_NAME, PASSWORD, ROOM_NAME, from ROOM where ROOM_ID = ?";
+        return jdbc.queryForObject(sql,newInstance(Room.class),roomId);
+    }
 }

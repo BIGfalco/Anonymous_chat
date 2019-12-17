@@ -1,20 +1,34 @@
 package jp.ac.chitose.photon.Anonymous_chat.service;
 
-import jp.ac.chitose.photon.Anonymous_chat.entity.Room;
+import jp.ac.chitose.photon.Anonymous_chat.form.Room;
+import jp.ac.chitose.photon.Anonymous_chat.repository.RoomRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+@Service
+public class RoomService {
 
-public interface RoomService {
+    @Autowired
+    private RoomRepository roomRepository;
 
-    Room getOne(int roomID);
+    public void save(int roomID, String roomName, String password) {
+        var room = new Room(roomID, roomName, password);
+        /*return*/ roomRepository.insert(room);
+    }
 
-    void saveRoom(Room room);
+    public boolean existsRoomId(int roomId) {
+        int flag = roomRepository.searchRoomId(roomId);
+        if(flag > 0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
-    void deleteRoom(Room room);
-
-    boolean existsRoomId(int roomId);
-
-
-
+    public Room getRoom(int roomId) {
+        var room = roomRepository.select(roomId);
+        return room;
+    }
 
 }
