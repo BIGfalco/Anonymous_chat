@@ -26,7 +26,7 @@ public class RoomRepository {
     }
 
     public Room select(int roomId) {
-        var sql = "select ROOM_NAME, PASSWORD, ROOM_NAME, from ROOM where ROOM_ID = ?";
+        var sql = "select ROOM_ID, PASSWORD, ROOM_NAME, from ROOM where ROOM_ID = ?";
         return jdbc.queryForObject(sql,newInstance(Room.class),roomId);
     }
 }
