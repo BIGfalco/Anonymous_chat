@@ -64,9 +64,10 @@
         </nav>
     </div>
 
-    <ul th:each="Tag : ${Tags}">
-        <li><pre style="background: white"><label><form name="form1"><input type="checkbox" name="select">[[${Tag}]]</form></label></pre></li>
+    <ul th:each="ri:${messages}">
+        <li><pre style="background: white"><label><form name="form1"><input type="checkbox" name="select">[[${ri.message}]]</form></label></pre></li>
     </ul>
+
     <footer>
         <div id="btn"><button id="cp_btn" onclick="myCheck();">投票</button></div>
     </footer>
