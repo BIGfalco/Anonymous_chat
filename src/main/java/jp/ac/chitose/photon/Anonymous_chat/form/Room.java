@@ -3,13 +3,15 @@ package jp.ac.chitose.photon.Anonymous_chat.form;
 public class Room {
     private int roomId;
 
-    private String password;
-
     private String roomName;
 
+    private String password;
 
 
-    public Room(int roomId, String password, String roomName) {
+
+
+
+    public Room(int roomId, String roomName,String password) {
         this.roomId = roomId;
         this.password = password;
         this.roomName = roomName;
