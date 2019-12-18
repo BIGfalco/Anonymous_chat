@@ -33,3 +33,30 @@ ALTER TABLE ENQUETE
 
 ALTER TABLE ENQUETE
   RENAME COLUMN メッセージ TO message;
+
+
+create table room(
+                   ルームID INTEGER primary key ,
+                   ルーム名 varchar(100) not null,
+                   パスワード varchar(64) not null
+);
+
+create table message (
+                       ルームID  integer not null,
+                       ユーザーID varchar(10),
+                       メッセージ  varchar(1000),
+                       時刻 datetime not null,
+                       primary key (ルームID,ユーザーID),
+                       FOREIGN KEY (ルームID) references ROOM(ルームID)
+);
+
+create table enquete (
+                       ルームID integer,
+                       タグ varchar(255),
+                       メッセージ varchar(1000),
+                       投票数 integer,
+                       制限時間 timestamp,
+                       primary key (ルームID,タグ),
+                       FOREIGN KEY (ルームID) references ROOM(ルームID),
+                       FOREIGN KEY (メッセージ) references MESSAGE(メッセージ)
+);
