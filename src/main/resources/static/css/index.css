@@ -52,15 +52,15 @@
 .button2{
     display: inline-block;
     padding: 5em 15em;
+    font-size: large;
     text-decoration: none;
     color: #fcc875;
     border: solid 2px #fcc875;
     border-radius: 5px;
-    background: 00000000;
     transition: .4s;
-    font-size: large;
+    background: 00000000;
+    margin: 10% 0;
     font-family: Arial,sans-serif;
-    text-align: center;
 
 }
 .button2:hover{
