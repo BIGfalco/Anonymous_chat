@@ -56,10 +56,11 @@ ul {
 
 .triangle {
     width: 100px;
-    margin-left: auto;
+    margin-right: auto;
 }
 
 .triangle3{
+    /*
     position: fixed;
     margin: 10px;
     z-index: 3;
@@ -68,4 +69,15 @@ ul {
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-top: 15px solid white;
+    */
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    top: 40px;
+    left: 32px;
+    border-top: solid 3px white;
+    border-left: solid 3px white;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    z-index: 3;
 }

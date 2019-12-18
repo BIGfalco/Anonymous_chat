@@ -10,14 +10,14 @@
 </head>
 <body>
     <header>
-        <div class="enquate_title">投票   <span>[[${tag}]]</span></div>
+        <div class="enquate_title">投票   <span>[[${Tag}]]</span></div>
     </header>
-    <!--
+
     <div class="triangle">
         <div class=""btn></div>
         <div class="triangle3" onclick= MouseClick()></div>
     </div>
-    -->
+
 
     <div class="zdo_drawer_menu">
         <div class="zdo_drawer_bg"></div>
@@ -32,17 +32,17 @@
             <ul class="zdo_drawer_nav">
                 <li>
                     <a href="#">
-                        メニュー1
+                        ルーム選択
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        メニュー2
+                        投票締切日設定
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        メニュー3
+                        ルーム情報
                     </a>
                 </li>
                 <li>
@@ -64,16 +64,16 @@
         </nav>
     </div>
 
-    <ul th:each="Tag : ${Tags}">
-        <li><pre style="background: white"><label><form name="form1"><input type="checkbox" name="select">[[${Tag}]]</form></label></pre></li>
+    <ul th:each="ri:${messages}">
+        <li><pre style="background: white"><label><form name="form1"><input type="checkbox" name="select">[[${ri.message}]]</form></label></pre></li>
     </ul>
+
     <footer>
         <div id="btn"><button id="cp_btn" onclick="myCheck();">投票</button></div>
     </footer>
 
     <script type="text/javascript">
-        function MouseClick()
-        {
+        function MouseClick() {
             alert("三角のボタン がクリックされました");
         }
 

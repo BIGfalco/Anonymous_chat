@@ -1,6 +1,6 @@
 package jp.ac.chitose.photon.Anonymous_chat.form;
 
-public class Enquete {
+public class Enquate {
 
     private String message;
 
@@ -8,7 +8,7 @@ public class Enquete {
 
     private String deadLine;
 
-    public Enquete(String message, int votes, String deadLine) {
+    public Enquate(String message, int votes, String deadLine) {
         this.message = message;
         Votes = votes;
         this.deadLine = deadLine;
