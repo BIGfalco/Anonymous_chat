@@ -58,7 +58,5 @@ public class chatController {
         return "login/login";
     }
 
-    @
-
 
 }
