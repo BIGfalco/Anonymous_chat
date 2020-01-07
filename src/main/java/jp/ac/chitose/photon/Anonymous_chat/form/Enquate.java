@@ -4,14 +4,20 @@ public class Enquate {
 
     private String message;
 
-    private int Votes;
+    private int votes;
 
     private String deadLine;
 
     public Enquate(String message, int votes, String deadLine) {
         this.message = message;
-        Votes = votes;
+        this.votes = votes;
         this.deadLine = deadLine;
+    }
+
+    public Enquate() {
+        this.message = null;
+        this.votes = -1;
+        this.deadLine = null;
     }
 
     public String getMessage() {
@@ -23,11 +29,11 @@ public class Enquate {
     }
 
     public int getVotes() {
-        return Votes;
+        return votes;
     }
 
     public void setVotes(int votes) {
-        Votes = votes;
+        votes = votes;
     }
 
     public String getDeadLine() {

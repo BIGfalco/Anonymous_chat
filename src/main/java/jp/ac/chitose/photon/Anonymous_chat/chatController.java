@@ -70,5 +70,9 @@ public class chatController {
         return "chatRoom/enquate";
     }
 
+    @GetMapping("Chat")
+    public String chat(Model model) {
+        return "ChatRoom/chat";
+    }
 
 }

@@ -11,6 +11,11 @@ public class Message {
         this.timeStamp = timeStamp;
     }
 
+    public Message() {
+        this.message = null;
+        this.timeStamp = null;
+    }
+
     public String getMessage() {
         return message;
     }
