@@ -1,5 +1,6 @@
 package jp.ac.chitose.photon.Anonymous_chat;
 
+import jp.ac.chitose.photon.Anonymous_chat.form.Room;
 import jp.ac.chitose.photon.Anonymous_chat.service.EnquateService;
 import jp.ac.chitose.photon.Anonymous_chat.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,6 +58,7 @@ public class chatController {
         if(room.getPassword().equals(pass)){
             model.addAttribute("roomName",room.getRoomName());
             model.addAttribute("roomId",room.getRoomId());
+            //model.addAttribute("room",new Room());
             return "login/login-after";
         }
         return "login/login";
@@ -72,7 +74,7 @@ public class chatController {
 
     @GetMapping("Chat")
     public String chat(Model model) {
-        return "ChatRoom/chat";
+        return "chatRoom/chat";
     }
 
 }
