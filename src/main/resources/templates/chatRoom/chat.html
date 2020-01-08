@@ -4,7 +4,7 @@
     <title>チャットルーム</title>
     <link rel="stylesheet" type="text/css" href="../../static/css/chat.css">
     <script src="/webjars/sockjs-client/1.0.2/sockjs.js"></script>
-    <script src="/webjars/stomp-websocket/2.3.3/stomp.js"></script>
+    <script src="/webjars/stomp-websocket/2.3.3-1/stomp.js"></script>
     <script type="text/javascript">
         var stompClient = null;
 
@@ -14,7 +14,7 @@
         }
 
         function connect() {
-            var socket = new SockJS('/echo'); // WebSocketに接続
+            var socket = new SockJS('/endpoint'); // WebSocketに接続
             stompClient = Stomp.over(socket);
             stompClient.connect({}, function (frame) {
                 setConnected(true);
@@ -72,4 +72,4 @@
     </div>
 
 </body>
-</html>
+</htm

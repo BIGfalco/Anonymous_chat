@@ -1,5 +1,6 @@
 package jp.ac.chitose.photon.Anonymous_chat;
 
+import jp.ac.chitose.photon.Anonymous_chat.service.EnquateService;
 import jp.ac.chitose.photon.Anonymous_chat.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,9 @@ public class chatController {
 
     @Autowired
     private RoomService roomService;
+
+    @Autowired
+    private EnquateService enquateService;
 
     @GetMapping("index")
     public String index(Model model) {
@@ -58,5 +62,17 @@ public class chatController {
         return "login/login";
     }
 
+    @GetMapping("Enquate")
+    public String enquate(Model model) {
+        var Tag = "idea";
+        var messages = enquateService.messageSelect(Tag);
+        model.addAttribute("messages", messages);
+        return "chatRoom/enquate";
+    }
+
+    @GetMapping("Chat")
+    public String chat(Model model) {
+        return "ChatRoom/chat";
+    }
 
 }
