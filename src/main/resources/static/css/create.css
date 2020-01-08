@@ -14,17 +14,11 @@
     height: 100%;
 }
 
-
-.position {
-    vertical-align: center;
-    text-align: center;
+.front1 {
+    position: relative;
+    top: 30px;
 }
 
-.message{
-    font-family: Arial,sans-serif;
-    font-size: 20px;
-    color: #60412b;
-}
 .button1{
     display: inline-block;
     padding: 10px 20px;
@@ -42,6 +36,11 @@
 .button1:hover{
     background: #3c455c;
     color: white;
+}
+
+.front2 {
+    position: relative;
+    top: 30px;
 }
 
 .button2{
@@ -96,11 +95,24 @@
     margin-left: auto;
     margin-right: auto;
 }
+.position {
+    text-align: center;
+    vertical-align: center;
+}
 .a{
     text-align: center;
-    margin: 0 0;
+    margin: 10% 0;
 }
 .b{
     text-align: center;
     margin: 10% 0;
+}
+.c{
+    text-align: center;
+    margin: 10% 0;
+}
+.message{
+    font-family: Arial,sans-serif;
+    font-size: 20px;
+    color: #60412b;
 }
