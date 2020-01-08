@@ -8,14 +8,17 @@ public class Room {
     private String password;
 
 
-
-
-
     public Room(int roomId, String roomName,String password) {
         this.roomId = roomId;
         this.password = password;
         this.roomName = roomName;
 
+    }
+
+    public Room(){
+        this.roomId = -1;
+        this.password = null;
+        this.roomName = null;
     }
 
     public int getRoomId() {
