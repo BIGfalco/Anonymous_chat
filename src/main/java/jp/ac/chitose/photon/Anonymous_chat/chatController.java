@@ -63,9 +63,10 @@ public class chatController {
     }
 
     @GetMapping("Enquate")
-    public String enquate(Model model) {
-        var Tag = "idea";
-        var messages = enquateService.messageSelect(Tag);
+    public String enquate(Model model, String Tag) {
+        model.addAttribute("Tag", "[テスト]");
+        var messages = enquateService.messageSelect("テスト");
+        System.out.println("messages: " + messages);
         model.addAttribute("messages", messages);
         return "chatRoom/enquate";
     }
