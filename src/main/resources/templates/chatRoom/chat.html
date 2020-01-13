@@ -36,18 +36,24 @@
 
         function sendName() {
             var message = document.getElementById('name').value;
-            stompClient.send("/app/endpoint", {}, JSON.stringify({'message': message,'timestamp': new Date()})); // メッセージを送信
+            var time  = new Date().toString();
+            //var time = date.toString();
+            stompClient.send("/app/endpoint", {}, JSON.stringify({message: message,timeStamp: time})); // メッセージを送信
         }
 
         function showGreeting(greeting) {
-            var json = JSON.parse(greeting.body).content;
+            var json = JSON.parse(greeting.body);
             var message = json.message;
-            var time = json.timestamp;
+            var time = json.timeStamp;
+            console.log(message);
             var response = document.getElementById('response');
             var p = document.createElement('p');
+            var t = document.createElement('time');
             p.style.wordWrap = 'break-word';
             p.appendChild(document.createTextNode(message));
+            t.appendChild(document.createTextNode(time));
             response.appendChild(p);
+            response.appendChild(t);
         }
     </script>
 </head>
