@@ -28,15 +28,15 @@
 
 
         function sendNMessage() {
-            var message = document.getElementById('message').value;
-            stompClient.send("/app/endpoint", {}, JSON.stringify({'message': message})); // メッセージを送信
+            var messageForm = document.getElementById('messageForm').value;
+            stompClient.send("/app/endpoint", {}, JSON.stringify({'messageForm': messageForm})); // メッセージを送信
         }
 
-        function showGreeting(message) {
+        function showGreeting(messageForm) {
             var response = document.getElementById('response');
             var p = document.createElement('p');
             p.style.wordWrap = 'break-word';
-            p.appendChild(document.createTextNode(message));
+            p.appendChild(document.createTextNode(messageForm));
             response.appendChild(p);
         }
     </script>
@@ -67,7 +67,7 @@
     <table>
         <tr>
             <td>
-                <input id="message" type="text" name="message" class="newMessage form-control" autocomplete="nope">
+                <input id="messageForm" type="text" name="messageForm" class="newMessage form-control" autocomplete="nope">
             </td>
             <td width="80px">
                 <button type="submit" class="btn" onclick="sendMessage()">送信</button>

@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class chatController {
 
@@ -17,6 +19,9 @@ public class chatController {
 
     @Autowired
     private EnquateService enquateService;
+
+    @Autowired
+    private HttpSession httpSession;
 
     @GetMapping("index")
     public String index(Model model) {
@@ -41,9 +46,11 @@ public class chatController {
 
         }
         roomService.save(roomId,name,pass);
+        httpSession.setAttribute("roomName",name);
         model.addAttribute("roomName",name);
         model.addAttribute("password",pass);
         model.addAttribute("roomId",roomId);
+
         return "create/create-after";
     }
 
@@ -75,6 +82,7 @@ public class chatController {
 
     @GetMapping("Chat")
     public String chat(Model model) {
+        model.addAttribute("roomName","test");
         return "chatRoom/chat";
     }
 
