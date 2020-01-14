@@ -38,13 +38,20 @@
             var time = json.timeStamp;
             console.log(messageForm);
             var response = document.getElementById('response');
-            var p = document.createElement('p');
-            var t = document.createElement('time');
-            p.style.wordWrap = 'break-word';
-            p.appendChild(document.createTextNode(messageForm));
-            t.appendChild(document.createTextNode(time));
-            response.appendChild(p);
-            response.appendChild(t);
+
+            var myText = document.createElement('div');
+            myText.setAttribute("class","myText");
+            var youText = document.createElement('div');
+            youText.setAttribute("class","youText");
+            var message = document.createElement('div');
+            message.style.wordWrap = 'break-word';
+            message.appendChild(document.createTextNode(messageForm));
+            var date = document.createElement('div');
+            date.appendChild(document.createTextNode(time));
+
+            myText.appendChild(message);
+            myText.appendChile(date);
+            response.appendChild(myText);
         }
     </script>
 </head>
@@ -61,7 +68,7 @@
             <div id="response" class="contents scroll"></div>
         </div>
 
-        <label>What is your name?</label><input type="text" id="messageForm"/>
+        <input type="text" id="messageForm"/>
         <button id="sendName" onclick="sendName();">Send</button>
 
     </div>
