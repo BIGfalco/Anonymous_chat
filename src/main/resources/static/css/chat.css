@@ -78,45 +78,27 @@
 
 
 /* 相手の会話 */
-.base_view .flText {
+.base_view .youText {
     width: 100%;
     position: relative;
     display: block;
     margin-bottom: 5px;
     max-width: calc(100% - 120px);;
     clear: both;
-}
-
-/* アイコン */
-.base_view .flText figure {
-    width: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0;
-    margin: 0;
-}
-
-/* 丸く切り抜く */
-.base_view .flText figure img{
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-}
-
-/* テキスト　相手用 */
-.base_view .flText .flText-text {
     float: left;
     margin-left: 70px;
 }
 
-.base_view .flText .flText-text .name {
-    font-size: 80%;
-    color: white;
+
+/* テキスト　相手用 */
+/*.base_view .flText .flText-text {
+    float: left;
+    margin-left: 70px;
 }
+*/
 
 /* 会話文　相手用 */
-.base_view .flText .text {
+.base_view .youText .text {
     margin: 0;
     position: relative;
     padding: 10px;
@@ -126,7 +108,7 @@
 
 
 /* 吹き出し　相手用 */
-.base_view .flText .text::after {
+.base_view .youText .text::after {
     content: '';
     position: absolute;
     display: block;
@@ -140,7 +122,7 @@
 }
 
 /* 時刻　相手用 */
-.base_view .flText .date {
+.base_view .youText .date {
     content: '';
     position: relative;
     display: block;

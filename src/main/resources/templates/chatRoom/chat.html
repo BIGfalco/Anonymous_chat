@@ -44,13 +44,15 @@
             var youText = document.createElement('div');
             youText.setAttribute("class","youText");
             var message = document.createElement('div');
+            message.setAttribute("class","text")
             message.style.wordWrap = 'break-word';
             message.appendChild(document.createTextNode(messageForm));
-            var date = document.createElement('div');
-            date.appendChild(document.createTextNode(time));
+            var timestamp = document.createElement('div');
+            timestamp.setAttribute("class","date");
+            timestamp.appendChild(document.createTextNode(time));
 
             myText.appendChild(message);
-            myText.appendChile(date);
+            myText.appendChile(timestamp);
             response.appendChild(myText);
         }
     </script>
