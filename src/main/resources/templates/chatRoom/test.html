@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/chat.css" th:href="@{/css/chat.css}">-->/
+    <script src="/webjars/sockjs-client/1.1.2/sockjs.js"></script>
+    <script src="/webjars/stomp-websocket/2.3.3/stomp.js"></script>
+    <script type="text/javascript">
+        var stompClient = null;
+
+        function setConnected(connected) {
+            document.getElementById('conversationDiv').style.visibility = connected ? 'visible' : 'hidden';
+            document.getElementById('response').innerHTML = '';
+        }
+
+        function connect() {
+            var socket = new SockJS('/endpoint'); // WebSocketに接続
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, function (frame) {
+                setConnected(true);
+                console.log('Connected: ' + frame);
+                stompClient.subscribe('/topic/greetings', function (greet) { // 挨拶の応答(/topic/greetings)を購読する
+                    showGreeting(JSON.parse(greet.body).content);
+                });
+            });
+        }
+
+
+        function sendNMessage() {
+            var messageForm = document.getElementById('messageForm').value;
+            stompClient.send("/app/endpoint", {}, JSON.stringify({'messageForm': messageForm})); // メッセージを送信
+        }
+
+        function showGreeting(messageForm) {
+            var response = document.getElementById('response');
+            var p = document.createElement('p');
+            p.style.wordWrap = 'break-word';
+            p.appendChild(document.createTextNode(messageForm));
+            response.appendChild(p);
+        }
+    </script>
+    <title>チャットルーム</title>
+</head>
+<body onload="connect()">
+<!--
+    <div class="base_view">
+        <div class="room_name">
+            [[${roomName}]]
+        </div>
+        <div id="area" class="contents scroll">
+            <div class="myText">
+                <div class="text">[[$myText}]]</div>
+                <div class="date">[[$myDate}]]</div>
+            </div>
+
+            <div class="youText">
+                <div class="text">[[$youText}]]</div>
+                <div class="date">[[$youDate}]]</div>
+            </div>
+        </div>
+    </div>
+-->
+<div id ="response"></div>
+
+<div class="form-group">
+    <table>
+        <tr>
+            <td>
+                <input id="messageForm" type="text" name="messageForm" class="newMessage form-control" autocomplete="nope">
+            </td>
+            <td width="80px">
+                <button type="submit" class="btn" onclick="sendMessage()">送信</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

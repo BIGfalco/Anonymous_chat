@@ -11,7 +11,7 @@ ALTER TABLE MESSAGE
   RENAME COLUMN ユーザーID TO user_id;
 
 ALTER TABLE MESSAGE
-  RENAME COLUMN メッセージ TO  message;
+  RENAME COLUMN メッセージ TO  messageForm;
 
 ALTER TABLE MESSAGE
   RENAME COLUMN ルームID TO room_id;
@@ -32,7 +32,7 @@ ALTER TABLE ENQUETE
   RENAME COLUMN 制限時間 TO timelimit;
 
 ALTER TABLE ENQUETE
-  RENAME COLUMN メッセージ TO message;
+  RENAME COLUMN メッセージ TO messageForm;
 
 
 create table room(
@@ -41,7 +41,7 @@ create table room(
                    パスワード varchar(64) not null
 );
 
-create table message (
+create table messageForm (
                        ルームID  integer not null,
                        ユーザーID varchar(10),
                        メッセージ  varchar(1000),

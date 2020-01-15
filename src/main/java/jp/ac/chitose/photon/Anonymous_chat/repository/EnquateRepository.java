@@ -16,8 +16,8 @@ public class EnquateRepository {
     private JdbcTemplate jdbc;
 
     public List<Enquate> SelectMessage(String Tag) {
-        var sql = "select message from ENQUETE where Tag = ?";
-        return jdbc.query(sql, newInstance(Enquate.class), Tag);
+        var sql = "select MESSAGE from ENQUETE where TAG = ?";
+        return jdbc.query(sql,newInstance(Enquate.class),Tag);
     }
 
 }
