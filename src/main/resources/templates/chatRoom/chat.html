@@ -3,6 +3,7 @@
 <head>
     <title>チャット</title>
     <link rel="stylesheet" type="text/css" href="/css/chat.css" th:href="@{/css/chat.css}">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <script src="/webjars/sockjs-client/1.0.2/sockjs.js"></script>
     <script src="/webjars/stomp-websocket/2.3.3/stomp.js"></script>
     <script type="text/javascript">
@@ -29,7 +30,13 @@
 
         function sendName() {
             var messageForm = document.getElementById('messageForm').value;
-            var time  = new Date().toString();
+            var timeLog  = new Date();
+            var hours = timeLog.getHours();
+            var minutes = timeLog.getMinutes().toString();
+            if (parseInt(minutes) >= 0 && parseInt(minutes) <= 9) {
+                minutes = "0" + minutes;
+            }
+            var time =  hours + ":" + minutes;
             //var time = date.toString();
             stompClient.send("/app/endpoint", {}, JSON.stringify({messageForm: messageForm,timeStamp: time, id: myId})); // メッセージを送信
         }
@@ -57,7 +64,7 @@
                 timestamp.setAttribute("class", "date");
                 timestamp.appendChild(document.createTextNode(time));
                 myText.appendChild(message);
-                myText.appendChile(timestamp);
+                myText.appendChild(timestamp);
                 response.appendChild(myText);
             }
             else {
@@ -91,9 +98,11 @@
             <div id="response" class="contents scroll"></div>
         </div>
 
-        <input type="text" id="messageForm"/>
-        <button id="sendName" onclick="sendName();">Send</button>
-
+        <div class="form-group">
+            <i class="fas fa-plus"></i>
+            <input type="text" id="messageForm"/>
+            <button id="sendName" onclick="sendName();">Send</button>
+        </div>
     </div>
 </div>
 </body>
