@@ -12,6 +12,6 @@ public class GreetingController {
     @SendTo("/topic/greetings") // メッセージの宛先を指定
     public MessageForm greeting(MessageForm messageForm) {
         //TimeUnit.SECONDS.sleep(300);
-        return new MessageForm(messageForm.getMessageForm(),messageForm.getTimeStamp());
+        return new MessageForm(messageForm.getMessageForm(),messageForm.getTimeStamp(),messageForm.getId());
     }
 }

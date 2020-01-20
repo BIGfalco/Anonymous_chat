@@ -6,6 +6,7 @@
     <script src="/webjars/stomp-websocket/2.3.3/stomp.js"></script>
     <script type="text/javascript">
         var stompClient = null;
+        var myId = Math.random().toString(32).substring(2);
 
         function setConnected() {
             document.getElementById('conversationDiv')/*.style.visibility = connected ? 'visible' : 'hidden'*/;
@@ -29,32 +30,51 @@
             var messageForm = document.getElementById('messageForm').value;
             var time  = new Date().toString();
             //var time = date.toString();
-            stompClient.send("/app/endpoint", {}, JSON.stringify({messageForm: messageForm,timeStamp: time})); // メッセージを送信
+            stompClient.send("/app/endpoint", {}, JSON.stringify({messageForm: messageForm,timeStamp: time, id: myId})); // メッセージを送信
         }
 
         function showGreeting(greeting) {
             var json = JSON.parse(greeting.body);
             var messageForm = json.messageForm;
             var time = json.timeStamp;
+            var id = json.id;
+
             console.log(messageForm);
+            console.log(time);
+            console.log(id);
+
             var response = document.getElementById('response');
 
-            var myText = document.createElement('div');
-            myText.setAttribute("class","myText");
-            var youText = document.createElement('div');
-            youText.setAttribute("class","youText");
-            var message = document.createElement('div');
-            message.setAttribute("class","text")
-            message.style.wordWrap = 'break-word';
-            message.appendChild(document.createTextNode(messageForm));
-            var timestamp = document.createElement('div');
-            timestamp.setAttribute("class","date");
-            timestamp.appendChild(document.createTextNode(time));
-
-            myText.appendChild(message);
-            myText.appendChile(timestamp);
-            response.appendChild(myText);
+            if(myId == id) {
+                var myText = document.createElement('div');
+                myText.setAttribute("class", "myText");
+                var message = document.createElement('div');
+                message.setAttribute("class", "text")
+                message.style.wordWrap = 'break-word';
+                message.appendChild(document.createTextNode(messageForm));
+                var timestamp = document.createElement('div');
+                timestamp.setAttribute("class", "date");
+                timestamp.appendChild(document.createTextNode(time));
+                myText.appendChild(message);
+                myText.appendChile(timestamp);
+                response.appendChild(myText);
+            }
+            else {
+                var youText = document.createElement('div');
+                youText.setAttribute("class","youText");
+                var message = document.createElement('div');
+                message.setAttribute("class", "text")
+                message.style.wordWrap = 'break-word';
+                message.appendChild(document.createTextNode(messageForm));
+                var timestamp = document.createElement('div');
+                timestamp.setAttribute("class", "date");
+                timestamp.appendChild(document.createTextNode(time));
+                youText.appendChild(message);
+                youText.appendChild(timestamp);
+                response.appendChild(youText);
+            }
         }
+
     </script>
 </head>
 <body onload="connect()">

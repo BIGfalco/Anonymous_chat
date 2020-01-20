@@ -6,18 +6,18 @@ public class MessageForm {
 
     private String timeStamp;
 
-    private String session;
+    private String id;
 
-    public MessageForm(String messageForm, String timeStamp) {
+    public MessageForm(String messageForm, String timeStamp, String id) {
         this.messageForm = messageForm;
         this.timeStamp = timeStamp;
-        this.session = "";
+        this.id = id;
     }
 
     public MessageForm() {
         this.messageForm = "";
         this.timeStamp = "";
-        this.session = "";
+        this.id = "";
     }
 
     public String getMessageForm() {
@@ -36,11 +36,11 @@ public class MessageForm {
         this.timeStamp = timeStamp;
     }
 
-    public String getSession() {
-        return session;
+    public String getId() {
+        return id;
     }
 
-    public void setSession(String session) {
-        this.session = session;
+    public void setId(String session) {
+        this.id = session;
     }
 }
